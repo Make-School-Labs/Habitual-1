@@ -35,7 +35,6 @@ class MainViewController: UIViewController {
 extension MainViewController {
     
     func setupNavBar() {
-        
         title = "Habitual"
         
         let addButton = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addHabit(sender:)))
@@ -44,7 +43,8 @@ extension MainViewController {
     }
     
     @objc func addHabit(sender: UIBarButtonItem) {
-        print("Add button tapped")
+        let addHabitVc = AddHabitViewController.instantiate()
+        navigationController?.pushViewController(addHabitVc, animated: true)
     }
 }
 
@@ -74,6 +74,14 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
         cell.configure(habit)
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let selectedHabit = habits[indexPath.row]
+        let habitDetailedVc = HabitDetailedViewController.instantiate()
+        habitDetailedVc.habit = selectedHabit
+        navigationController?.pushViewController(habitDetailedVc, animated: true)
     }
 }
 

@@ -18,6 +18,8 @@
 		B9FB8EE9212E034300EB03E4 /* HabitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FB8EE7212E034300EB03E4 /* HabitTableViewCell.swift */; };
 		B9FB8EEA212E034300EB03E4 /* HabitTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9FB8EE8212E034300EB03E4 /* HabitTableViewCell.xib */; };
 		E941CD0F218B89AD0032C386 /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E941CD0E218B89AD0032C386 /* Habit.swift */; };
+		E941CD12218B91A70032C386 /* HabitDetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E941CD10218B91A70032C386 /* HabitDetailedViewController.swift */; };
+		E941CD13218B91A70032C386 /* HabitDetailedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E941CD11218B91A70032C386 /* HabitDetailedViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		B9FB8EE7212E034300EB03E4 /* HabitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitTableViewCell.swift; sourceTree = "<group>"; };
 		B9FB8EE8212E034300EB03E4 /* HabitTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HabitTableViewCell.xib; sourceTree = "<group>"; };
 		E941CD0E218B89AD0032C386 /* Habit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
+		E941CD10218B91A70032C386 /* HabitDetailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitDetailedViewController.swift; sourceTree = "<group>"; };
+		E941CD11218B91A70032C386 /* HabitDetailedViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HabitDetailedViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +88,8 @@
 				2226102C212C80B100EA4FAC /* MainViewController.xib */,
 				22261032212DEDC400EA4FAC /* AddHabitViewController.swift */,
 				22261033212DEDC400EA4FAC /* AddHabitViewController.xib */,
+				E941CD10218B91A70032C386 /* HabitDetailedViewController.swift */,
+				E941CD11218B91A70032C386 /* HabitDetailedViewController.xib */,
 				B9FB8EE7212E034300EB03E4 /* HabitTableViewCell.swift */,
 				B9FB8EE8212E034300EB03E4 /* HabitTableViewCell.xib */,
 			);
@@ -151,6 +157,7 @@
 				22261024212B768200EA4FAC /* LaunchScreen.storyboard in Resources */,
 				2226102E212C80B100EA4FAC /* MainViewController.xib in Resources */,
 				22261021212B768200EA4FAC /* Assets.xcassets in Resources */,
+				E941CD13218B91A70032C386 /* HabitDetailedViewController.xib in Resources */,
 				B9FB8EEA212E034300EB03E4 /* HabitTableViewCell.xib in Resources */,
 				22261035212DEDC400EA4FAC /* AddHabitViewController.xib in Resources */,
 			);
@@ -165,6 +172,7 @@
 			files = (
 				E941CD0F218B89AD0032C386 /* Habit.swift in Sources */,
 				2226102D212C80B100EA4FAC /* MainViewController.swift in Sources */,
+				E941CD12218B91A70032C386 /* HabitDetailedViewController.swift in Sources */,
 				22261031212C849600EA4FAC /* UIViewControllerExtensions.swift in Sources */,
 				B9FB8EE9212E034300EB03E4 /* HabitTableViewCell.swift in Sources */,
 				2226101A212B768000EA4FAC /* AppDelegate.swift in Sources */,
