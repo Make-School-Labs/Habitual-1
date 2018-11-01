@@ -17,6 +17,7 @@
 		22261035212DEDC400EA4FAC /* AddHabitViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22261033212DEDC400EA4FAC /* AddHabitViewController.xib */; };
 		B9FB8EE9212E034300EB03E4 /* HabitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FB8EE7212E034300EB03E4 /* HabitTableViewCell.swift */; };
 		B9FB8EEA212E034300EB03E4 /* HabitTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9FB8EE8212E034300EB03E4 /* HabitTableViewCell.xib */; };
+		E941CD0F218B89AD0032C386 /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E941CD0E218B89AD0032C386 /* Habit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		22261033212DEDC400EA4FAC /* AddHabitViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddHabitViewController.xib; sourceTree = "<group>"; };
 		B9FB8EE7212E034300EB03E4 /* HabitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitTableViewCell.swift; sourceTree = "<group>"; };
 		B9FB8EE8212E034300EB03E4 /* HabitTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HabitTableViewCell.xib; sourceTree = "<group>"; };
+		E941CD0E218B89AD0032C386 /* Habit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				22261019212B768000EA4FAC /* AppDelegate.swift */,
+				E941CD0E218B89AD0032C386 /* Habit.swift */,
 				2226102F212C80C300EA4FAC /* Views */,
 				22261020212B768200EA4FAC /* Assets.xcassets */,
 				22261022212B768200EA4FAC /* LaunchScreen.storyboard */,
@@ -160,6 +163,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E941CD0F218B89AD0032C386 /* Habit.swift in Sources */,
 				2226102D212C80B100EA4FAC /* MainViewController.swift in Sources */,
 				22261031212C849600EA4FAC /* UIViewControllerExtensions.swift in Sources */,
 				B9FB8EE9212E034300EB03E4 /* HabitTableViewCell.swift in Sources */,

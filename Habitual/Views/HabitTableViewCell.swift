@@ -10,18 +10,36 @@ import UIKit
 
 class HabitTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var myLabel1: UILabel!
-    @IBOutlet weak var myLabel2: UILabel!
+    static let identifier = "habit cell"
     
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    static var nib: UINib {
+        return UINib(nibName: String(describing: self), bundle: nil)
     }
+   
+    // MARK: - VARS
+    
+    // MARK: - RETURN VALUES
+    
+    // MARK: - METHODS
+    
+    func configure(_ habit: Habit) {
+        self.imageViewIcon.image = habit.selectedImage.image
+        self.labelHabitTitle.text = habit.title
+        self.labelStreaks.text = "steak: \(habit.currentStreak)"
+    }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         // Configure the view for the selected state
     }
+    
+    // MARK: - IBACTIONS
+    
+    @IBOutlet weak var imageViewIcon: UIImageView!
+    @IBOutlet weak var labelHabitTitle: UILabel!
+    @IBOutlet weak var labelStreaks: UILabel!
+    
+    // MARK: - LIFE CYCLE
     
 }
 
