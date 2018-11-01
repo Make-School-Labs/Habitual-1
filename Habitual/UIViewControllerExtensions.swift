@@ -9,7 +9,9 @@
 import UIKit
 
 extension UIViewController {
-  static func instantiate() -> UIViewController {
-    return self.init(nibName: String(describing: self), bundle: nil)
-  }
+    static func instantiate() -> UIViewController {
+        return self.init(nibName: String(describing: self), bundle: nil)
+    }
 }
+
+

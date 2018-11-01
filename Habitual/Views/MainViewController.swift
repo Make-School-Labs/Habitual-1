@@ -10,41 +10,41 @@ import UIKit
 
 class MainViewController: UIViewController {
     
-var usersArray : Array = [["first_name": "michael", "last_name": "jackson"], ["first_name" : "bill", "last_name" : "gates"], ["first_name" : "steve", "last_name" : "jobs"], ["first_name" : "mark", "last_name" : "zuckerberg"], ["first_name" : "anthony", "last_name" : "quinn"]]
-  
-  @IBOutlet weak var tableView: UITableView!
+    var usersArray : Array = [["first_name": "michael", "last_name": "jackson"], ["first_name" : "bill", "last_name" : "gates"], ["first_name" : "steve", "last_name" : "jobs"], ["first_name" : "mark", "last_name" : "zuckerberg"], ["first_name" : "anthony", "last_name" : "quinn"]]
     
-  override func viewDidLoad() {
-    setupNavBar()
-    // FIXME: Uncomment the next 2 lines when the tableview outlet is added
-    tableView.delegate = self
-    tableView.dataSource = self
+    @IBOutlet weak var tableView: UITableView!
     
-    let nib = UINib(nibName: "HabitTableViewCell", bundle: nil)
-    // FIXME: Uncomment this line when the tableview outlet is added
-    tableView.register(nib, forCellReuseIdentifier: "habitCell")
-  }
- 
+    override func viewDidLoad() {
+        setupNavBar()
+        // FIXME: Uncomment the next 2 lines when the tableview outlet is added
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        let nib = UINib(nibName: "HabitTableViewCell", bundle: nil)
+        // FIXME: Uncomment this line when the tableview outlet is added
+        tableView.register(nib, forCellReuseIdentifier: "habitCell")
+    }
+    
 }
 
 // MARK: - Navigation Bar Code
 extension MainViewController {
-  // Setup function to setup the NavBar
-  func setupNavBar() {
-    // Sets the title for this view controller in the navbar
-    title = "Habitual"
+    // Setup function to setup the NavBar
+    func setupNavBar() {
+        // Sets the title for this view controller in the navbar
+        title = "Habitual"
+        
+        // Create a bar button item for the 'Add' button
+        let addButton = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addHabit(sender:)))
+        
+        // Set the bar button as the right button
+        navigationItem.rightBarButtonItem = addButton
+    }
     
-    // Create a bar button item for the 'Add' button
-    let addButton = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addHabit(sender:)))
-    
-    // Set the bar button as the right button
-    navigationItem.rightBarButtonItem = addButton
-  }
-  
-  // This method will be called when the 'Add' button is pressed
-  @objc func addHabit(sender: UIBarButtonItem) {
-    print("Add button tapped")
-  }
+    // This method will be called when the 'Add' button is pressed
+    @objc func addHabit(sender: UIBarButtonItem) {
+        print("Add button tapped")
+    }
 }
 
 // MARK: - Tableview Delegate Methods
@@ -77,3 +77,4 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
 }
+

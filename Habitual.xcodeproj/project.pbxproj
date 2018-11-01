@@ -77,10 +77,10 @@
 		2226102F212C80C300EA4FAC /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				22261032212DEDC400EA4FAC /* AddHabitViewController.swift */,
-				22261033212DEDC400EA4FAC /* AddHabitViewController.xib */,
 				2226102B212C80B100EA4FAC /* MainViewController.swift */,
 				2226102C212C80B100EA4FAC /* MainViewController.xib */,
+				22261032212DEDC400EA4FAC /* AddHabitViewController.swift */,
+				22261033212DEDC400EA4FAC /* AddHabitViewController.xib */,
 				B9FB8EE7212E034300EB03E4 /* HabitTableViewCell.swift */,
 				B9FB8EE8212E034300EB03E4 /* HabitTableViewCell.xib */,
 			);

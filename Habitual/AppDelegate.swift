@@ -14,6 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   var window: UIWindow?
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    
     // Create and set the window to be the same size as the screen
     window = UIWindow(frame: UIScreen.main.bounds)
     
