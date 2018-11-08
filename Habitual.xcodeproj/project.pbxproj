@@ -21,6 +21,7 @@
 		E941CD12218B91A70032C386 /* HabitDetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E941CD10218B91A70032C386 /* HabitDetailedViewController.swift */; };
 		E941CD13218B91A70032C386 /* HabitDetailedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E941CD11218B91A70032C386 /* HabitDetailedViewController.xib */; };
 		E9F4A95B2194CF380029257D /* PersistenceLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F4A95A2194CF380029257D /* PersistenceLayer.swift */; };
+		E9F4A95D2194D44B0029257D /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F4A95C2194D44B0029257D /* DateExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		E941CD10218B91A70032C386 /* HabitDetailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitDetailedViewController.swift; sourceTree = "<group>"; };
 		E941CD11218B91A70032C386 /* HabitDetailedViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HabitDetailedViewController.xib; sourceTree = "<group>"; };
 		E9F4A95A2194CF380029257D /* PersistenceLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceLayer.swift; sourceTree = "<group>"; };
+		E9F4A95C2194D44B0029257D /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 				22261019212B768000EA4FAC /* AppDelegate.swift */,
 				E941CD0E218B89AD0032C386 /* Habit.swift */,
 				E9F4A95A2194CF380029257D /* PersistenceLayer.swift */,
+				E9F4A95C2194D44B0029257D /* DateExtensions.swift */,
 				2226102F212C80C300EA4FAC /* Views */,
 				22261020212B768200EA4FAC /* Assets.xcassets */,
 				22261022212B768200EA4FAC /* LaunchScreen.storyboard */,
@@ -178,6 +181,7 @@
 				E941CD12218B91A70032C386 /* HabitDetailedViewController.swift in Sources */,
 				E9F4A95B2194CF380029257D /* PersistenceLayer.swift in Sources */,
 				22261031212C849600EA4FAC /* UIViewControllerExtensions.swift in Sources */,
+				E9F4A95D2194D44B0029257D /* DateExtensions.swift in Sources */,
 				B9FB8EE9212E034300EB03E4 /* HabitTableViewCell.swift in Sources */,
 				2226101A212B768000EA4FAC /* AppDelegate.swift in Sources */,
 				22261034212DEDC400EA4FAC /* AddHabitViewController.swift in Sources */,

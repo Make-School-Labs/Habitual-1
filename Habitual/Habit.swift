@@ -10,7 +10,7 @@ import Foundation
 import UIKit.UIImage
 
 struct Habit {
-    enum Images: Int, CaseIterable {
+    enum Images: Int {
         case outdoors = 0
         
         var image: UIImage {
@@ -23,7 +23,16 @@ struct Habit {
     }
     
     var title: String
-    var currentStreak: Int = 0
-    var dateCreated: Date = Date()
+    let dateCreated: Date = Date()
     var selectedImage: Images
+    
+    var currentStreak: Int = 0
+    var bestStreak: Int = 0
+    var lastCompletionDate: Date?
+    var numberOfCompletions: Int = 0
+    
+    init(title: String, image: Images) {
+        self.title = title
+        self.selectedImage = image
+    }
 }
