@@ -10,7 +10,7 @@ import Foundation
 import UIKit.UIImage
 
 struct Habit {
-    enum Images {
+    enum Images: CaseIterable {
         case outdoors
         
         var image: UIImage {
