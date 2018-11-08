@@ -37,12 +37,12 @@ extension MainViewController {
     func setupNavBar() {
         title = "Habitual"
         
-        let addButton = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addHabit(sender:)))
+        let addButton = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addHabit(_:)))
         
         navigationItem.rightBarButtonItem = addButton
     }
     
-    @objc func addHabit(sender: UIBarButtonItem) {
+    @objc func addHabit(_ sender: UIBarButtonItem) {
         let addHabitVc = AddHabitViewController.instantiate()
         navigationController?.pushViewController(addHabitVc, animated: true)
     }
