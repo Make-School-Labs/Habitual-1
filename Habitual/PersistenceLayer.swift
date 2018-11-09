@@ -17,7 +17,7 @@ struct PersistenceLayer {
     private static let userDefaultsHabitsKeyValue = "HABITS_ARRAY"
     
     init() {
-        self.refreshHabits()
+        self.loadHabits()
     }
     
     // MARK: - RETURN VALUES
@@ -70,8 +70,12 @@ struct PersistenceLayer {
         self.saveHabits()
     }
     
+    mutating func setNeedsToReloadHabits() {
+        self.loadHabits()
+    }
+    
     //load
-    mutating func refreshHabits() {
+    private mutating func loadHabits() {
         let userDefaults = UserDefaults.standard
         guard
             let habitData = userDefaults.data(forKey: PersistenceLayer.userDefaultsHabitsKeyValue),
