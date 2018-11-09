@@ -21,21 +21,20 @@
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lu4-eU-mjR" userLabel="HabitImage">
                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="50" id="pTA-Jv-s8h"/>
-                        </constraints>
                     </imageView>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="lu4-eU-mjR" secondAttribute="trailing" id="FC5-2h-PAl"/>
-                <constraint firstItem="lu4-eU-mjR" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="df2-TO-qmg"/>
-                <constraint firstItem="lu4-eU-mjR" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="meo-pD-qiM"/>
+                <constraint firstAttribute="bottom" secondItem="lu4-eU-mjR" secondAttribute="bottom" id="J8c-0q-IQJ"/>
+                <constraint firstItem="lu4-eU-mjR" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="OcO-B0-gZq"/>
+                <constraint firstItem="lu4-eU-mjR" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="eDX-Jh-kDL"/>
+                <constraint firstAttribute="trailing" secondItem="lu4-eU-mjR" secondAttribute="trailing" id="qTv-bj-mgv"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <connections>
                 <outlet property="habitImage" destination="lu4-eU-mjR" id="97q-Bu-sx1"/>
             </connections>
+            <point key="canvasLocation" x="41.600000000000001" y="46.776611694152926"/>
         </collectionViewCell>
     </objects>
 </document>
