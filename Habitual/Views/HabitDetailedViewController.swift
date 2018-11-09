@@ -27,7 +27,13 @@ class HabitDetailedViewController: UIViewController {
         labelCurrentStreak.text = "\(habit.currentStreak) days"
         labelTotalCompletions.text = String(habit.numberOfCompletions)
         labelBestStreak.text = String(habit.bestStreak)
-//        labelStartingDate.text = habit.dateCreated.stringValue
+        labelStartingDate.text = habit.dateCreated.stringValue
+        
+        if habit.hasCompletedForToday {
+            buttonAction.setTitle("Completed for Today!", for: .normal)
+        } else {
+            buttonAction.setTitle("Mark as Completed", for: .normal)
+        }
     }
     
     // MARK: - IBACTIONS
