@@ -26,9 +26,7 @@ class ConfirmHabitViewController: UIViewController {
     // MARK: - IBACTIONS
     
     @IBOutlet weak var habitImageView: UIImageView!
-    @IBOutlet weak var nameOfHabitLabel: UILabel!
     @IBOutlet weak var habitNameInputField: UITextField!
-    @IBOutlet weak var createHabitButton: UIButton!
     
     @IBAction func createHabitButtonPressed(_ sender: Any) {
         var persistenceLayer = PersistenceLayer()

@@ -29,7 +29,7 @@
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Dcs-iH-BLw">
                     <rect key="frame" x="16" y="80" width="343" height="571"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="iL8-xp-A8i">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="iL8-xp-A8i">
                             <rect key="frame" x="37" y="0.0" width="269" height="269"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="iL8-xp-A8i" secondAttribute="height" id="ASx-Pf-IL3"/>
