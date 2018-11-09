@@ -26,6 +26,12 @@ class HabitTableViewCell: UITableViewCell {
         self.imageViewIcon.image = habit.selectedImage.image
         self.labelHabitTitle.text = habit.title
         self.labelStreaks.text = "streak: \(habit.currentStreak)"
+        
+        if habit.hasCompletedForToday {
+            self.accessoryType = .checkmark
+        } else {
+            self.accessoryType = .disclosureIndicator
+        }
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
