@@ -18,9 +18,6 @@ class AddHabitViewController: UIViewController{
     
     // MARK: - METHODS
     
-    private func updateUI() {
-        title = "Choose an Image"
-    }
     
     // MARK: - IBACTIONS
     
@@ -32,6 +29,20 @@ class AddHabitViewController: UIViewController{
         let confirmHabitVC = ConfirmHabitViewController.instantiate()
         confirmHabitVC.habitImage = habitImages[selectedIndexPath.row]
         navigationController?.pushViewController(confirmHabitVC, animated: true)
+    }
+    
+    // MARK: - Navigation Bar Code
+    
+    func setupNavBar() {
+        title = "Select Image"
+        
+        let cancelButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancelAddHabit(_:)))
+        navigationItem.leftBarButtonItem = cancelButton
+        
+    }
+    
+    @objc func cancelAddHabit(_ sender: UIBarButtonItem) {
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
     // MARK: - LIFE CYCLE
@@ -46,8 +57,8 @@ class AddHabitViewController: UIViewController{
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        setupNavBar()
         
-        updateUI()
     }
 }
 

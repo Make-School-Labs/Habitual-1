@@ -31,9 +31,13 @@ class ConfirmHabitViewController: UIViewController {
     @IBAction func createHabitButtonPressed(_ sender: Any) {
         var persistenceLayer = PersistenceLayer()
         guard let habitText = habitNameInputField.text else { return }
-        
+        if habitText.isEmpty{
+            return
+        }
+        else{
         persistenceLayer.createNewHabit(name: habitText, image: habitImage)
         self.presentingViewController?.dismiss(animated: true, completion: nil)
+        }
     }
     
     // MARK: - LIFE CYCLE
