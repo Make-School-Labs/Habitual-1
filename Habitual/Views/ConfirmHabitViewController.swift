@@ -39,6 +39,10 @@ class ConfirmHabitViewController: UIViewController {
     // MARK: - IBACTIONS
     
     @IBAction func createHabitButtonPressed(_ sender: Any) {
+        let selectedImage = Habit.Images.outdoors
+        var persistenceLayer = PersistenceLayer()
+        guard let habitText = habitNameInputField.text else {return}
+        persistenceLayer.createNewHabit(name: habitText, image: selectedImage)
         self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     

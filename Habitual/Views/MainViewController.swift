@@ -47,10 +47,6 @@ extension MainViewController {
     }
     
     @objc func addHabit(_ sender: UIBarButtonItem) {
-        _ = persistance.createNewHabit(name: "LOL", image: .outdoors)
-        tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
-        
-        return ()
         let addHabitVc = AddHabitViewController.instantiate()
         let navigationController = UINavigationController(rootViewController: addHabitVc)
         present(navigationController, animated: true, completion: nil)
