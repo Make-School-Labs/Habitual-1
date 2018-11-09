@@ -25,7 +25,7 @@ class HabitTableViewCell: UITableViewCell {
     func configure(_ habit: Habit) {
         self.imageViewIcon.image = habit.selectedImage.image
         self.labelHabitTitle.text = habit.title
-        self.labelStreaks.text = "steak: \(habit.currentStreak)"
+        self.labelStreaks.text = "streak: \(habit.currentStreak)"
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
