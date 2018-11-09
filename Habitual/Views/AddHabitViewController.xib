@@ -13,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddHabitViewController" customModule="Habitual" customModuleProvider="target">
             <connections>
                 <outlet property="collectionView" destination="jok-sa-OyP" id="PP5-2U-bx1"/>
+                <outlet property="pickPhotoButton" destination="S6W-tv-OM3" id="oaK-xV-kfl"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -35,13 +36,30 @@
                         <outlet property="delegate" destination="-1" id="W8o-tk-G9o"/>
                     </connections>
                 </collectionView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S6W-tv-OM3">
+                    <rect key="frame" x="15" y="597" width="345" height="50"/>
+                    <color key="backgroundColor" red="0.36470588240000001" green="0.70196078429999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="cKf-yK-CMM"/>
+                    </constraints>
+                    <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" title="Pick Photo">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="pickPhotoButtonPressed:" destination="-1" eventType="touchUpInside" id="7do-s9-tdi"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="S6W-tv-OM3" secondAttribute="trailing" constant="15" id="0d9-ot-HbK"/>
                 <constraint firstItem="jok-sa-OyP" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.75" id="ESQ-OD-e2a"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="jok-sa-OyP" secondAttribute="trailing" constant="15" id="Epa-lU-TGA"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="S6W-tv-OM3" secondAttribute="bottom" constant="20" id="KOW-Wf-OGy"/>
                 <constraint firstItem="jok-sa-OyP" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="Z2A-Dm-BcY"/>
                 <constraint firstItem="jok-sa-OyP" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="15" id="nDr-kG-A8T"/>
+                <constraint firstItem="S6W-tv-OM3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="pn7-PS-JTw"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
