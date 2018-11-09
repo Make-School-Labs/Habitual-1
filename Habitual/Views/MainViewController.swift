@@ -90,5 +90,22 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
         habitDetailedVc.habitIndex = indexPath.row
         navigationController?.pushViewController(habitDetailedVc, animated: true)
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        switch editingStyle {
+        case .delete:
+            let habitToDelete = persistance.habits[indexPath.row]
+            let habitIndexToDelete = indexPath.row
+            
+            let deleteAlert = UIAlertController(habitTitle: habitToDelete.title) {
+                self.persistance.delete(habitIndexToDelete)
+                tableView.deleteRows(at: [indexPath], with: .automatic)
+            }
+            
+            self.present(deleteAlert, animated: true)
+        default:
+            break
+        }
+    }
 }
 
