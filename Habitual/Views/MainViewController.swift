@@ -52,7 +52,9 @@ extension MainViewController {
         
         return ()
         let addHabitVc = AddHabitViewController.instantiate()
-        navigationController?.pushViewController(addHabitVc, animated: true)
+        let navigationController = UINavigationController(rootViewController: addHabitVc)
+        present(navigationController, animated: true, completion: nil)
+        
     }
 }
 

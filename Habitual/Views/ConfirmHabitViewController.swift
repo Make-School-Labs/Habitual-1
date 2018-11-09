@@ -17,8 +17,9 @@ class ConfirmHabitViewController: UIViewController {
     }
 
     // MARK: - VARS
+    var habitImage: UIImage!
 
-    @IBOutlet weak var habitImage: UIImageView!
+    @IBOutlet weak var habitImageView: UIImageView!
     
     @IBOutlet weak var nameOfHabitLabel: UILabel!
     
@@ -32,12 +33,13 @@ class ConfirmHabitViewController: UIViewController {
     // MARK: - METHODS
     private func updateUI() {
         title = "New Habit"
+        habitImageView.image = habitImage
     }
     
     // MARK: - IBACTIONS
     
     @IBAction func createHabitButtonPressed(_ sender: Any) {
-        
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
     

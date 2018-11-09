@@ -13,7 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ConfirmHabitViewController" customModule="Habitual" customModuleProvider="target">
             <connections>
                 <outlet property="createHabitButton" destination="LfO-P1-Kux" id="jEu-BF-JRU"/>
-                <outlet property="habitImage" destination="kae-MH-sOY" id="9jS-4Q-td0"/>
+                <outlet property="habitImageView" destination="kae-MH-sOY" id="tFS-V3-VZw"/>
                 <outlet property="habitNameInputField" destination="l4R-Ly-rc1" id="l6o-BV-4ft"/>
                 <outlet property="nameOfHabitLabel" destination="Ib7-C6-Q97" id="3Zs-O6-DhL"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -24,17 +24,12 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kae-MH-sOY">
-                    <rect key="frame" x="87" y="100" width="200" height="200"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kae-MH-sOY">
+                    <rect key="frame" x="88" y="100" width="199" height="200"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="200" id="CGh-tc-XhD"/>
+                    </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name of the New Habit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ib7-C6-Q97">
-                    <rect key="frame" x="98" y="354" width="178" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LfO-P1-Kux">
                     <rect key="frame" x="15" y="602" width="345" height="50"/>
                     <color key="backgroundColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -48,19 +43,38 @@
                         <action selector="createHabitButtonPressed:" destination="-1" eventType="touchUpInside" id="TaD-EF-hfF"/>
                     </connections>
                 </button>
-                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l4R-Ly-rc1">
-                    <rect key="frame" x="139" y="415" width="97" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <nil key="textColor"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
-                </textField>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="Ic8-OQ-wSX">
+                    <rect key="frame" x="15" y="330" width="345" height="90.5"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name of the New Habit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ib7-C6-Q97">
+                            <rect key="frame" x="83.5" y="0.0" width="178" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name of Habit" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l4R-Ly-rc1">
+                            <rect key="frame" x="43" y="60.5" width="259" height="30"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="l4R-Ly-rc1" firstAttribute="width" secondItem="Ic8-OQ-wSX" secondAttribute="width" multiplier="0.75" id="6Sx-je-sEo"/>
+                    </constraints>
+                </stackView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="LfO-P1-Kux" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="QEW-J4-6kQ"/>
+                <constraint firstItem="Ic8-OQ-wSX" firstAttribute="top" secondItem="kae-MH-sOY" secondAttribute="bottom" constant="30" id="TTM-AM-JXE"/>
+                <constraint firstItem="Ic8-OQ-wSX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="dpt-cR-ZW5"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="LfO-P1-Kux" secondAttribute="trailing" constant="15" id="eFM-z2-rbR"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Ic8-OQ-wSX" secondAttribute="trailing" constant="15" id="hyt-VU-fcC"/>
+                <constraint firstItem="kae-MH-sOY" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="80" id="r6R-7W-pCH"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="LfO-P1-Kux" secondAttribute="bottom" constant="15" id="rpr-eo-OCy"/>
+                <constraint firstItem="kae-MH-sOY" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="88" id="s2i-0T-KFu"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="kae-MH-sOY" secondAttribute="trailing" constant="88" id="y6U-wq-y6K"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
         </view>
