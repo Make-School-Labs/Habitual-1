@@ -12,7 +12,7 @@ class HabitImageCollectionViewCell: UICollectionViewCell {
     
     static let identifier = "habit image cell"
     
-    static var nib: UINib {
+    static var nib: UINib { // Registering the collection view when adding a new habit
         return UINib(nibName: String(describing: self), bundle: nil)
     }
     

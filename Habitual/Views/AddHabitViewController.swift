@@ -73,7 +73,7 @@ extension AddHabitViewController: UICollectionViewDataSource, UICollectionViewDe
             ) as! HabitImageCollectionViewCell
 
         cell.setImage(image: habitImages[indexPath.row].image)
-        return cell
+        return cell // Set cell with each image in the arrau
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
