@@ -12,7 +12,7 @@ struct PersistenceLayer {
     
     // MARK: - VARS
     
-    private(set) var habits: [Habit] = []
+    private(set) var habits: [Habit] = [] // Can only read to the array of habits can't write to it
     
     private static let userDefaultsHabitsKeyValue = "HABITS_ARRAY"
     
@@ -22,11 +22,11 @@ struct PersistenceLayer {
     
     // MARK: - RETURN VALUES
     
-    //add new habit
+    //Using a discardable result becuase we are returning a value that we are not using
     @discardableResult
     mutating func createNewHabit(name: String, image: Habit.Images) -> Habit {
         let newHabit = Habit(title: name, image: image)
-        self.habits.insert(newHabit, at: 0)
+        self.habits.insert(newHabit, at: 0) // Prepend the habits to the array
         self.saveHabits()
         
         return newHabit
@@ -36,14 +36,16 @@ struct PersistenceLayer {
     
     //mark habit complete
     mutating func markHabitAsCompleted(_ habitIndex: Int) -> Habit {
-        var updatedHabit = self.habits[habitIndex]
+        var updatedHabit = self.habits[habitIndex] // Getting the current habbit to be marked
         
+        // If the habit's status was changes return the updated habit
         guard updatedHabit.hasCompletedForToday == false else { return updatedHabit }
         
         //update completion count
         updatedHabit.numberOfCompletions += 1
         
         //update current streak
+        // The last completion date that we create is set to the updated habit's last completion date, then use that variable to be yesterday
         if let lastCompletionDate = updatedHabit.lastCompletionDate, lastCompletionDate.isYesterday {
             updatedHabit.currentStreak += 1
         } else {
@@ -78,6 +80,7 @@ struct PersistenceLayer {
         self.saveHabits()
     }
     
+    // Use mutating when you have to rewrite data to a property that is a value type
     mutating func setNeedsToReloadHabits() {
         self.loadHabits()
     }
@@ -102,6 +105,5 @@ struct PersistenceLayer {
         
         let userDefaults = UserDefaults.standard
         userDefaults.set(habitsData, forKey: PersistenceLayer.userDefaultsHabitsKeyValue)
-        userDefaults.synchronize()
     }
 }
