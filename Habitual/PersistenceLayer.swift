@@ -17,7 +17,7 @@ struct PersistenceLayer {
     private static let userDefaultsHabitsKeyValue = "HABITS_ARRAY"
     
     init() {
-        self.loadHabits()
+        self.refreshHabits()
     }
     
     // MARK: - RETURN VALUES
@@ -34,8 +34,10 @@ struct PersistenceLayer {
     // MARK: - METHODS
     
     //mark habit complete
-    mutating func markHabitAsCompleted(_ habitIndex: Int) {
+    mutating func markHabitAsCompleted(_ habitIndex: Int) -> Habit {
         var updatedHabit = self.habits[habitIndex]
+        
+        guard updatedHabit.hasCompletedForToday == false else { return updatedHabit }
         
         //update completion count
         updatedHabit.numberOfCompletions += 1
@@ -44,7 +46,7 @@ struct PersistenceLayer {
         if let lastCompletionDate = updatedHabit.lastCompletionDate, lastCompletionDate.isYesterday {
             updatedHabit.currentStreak += 1
         } else {
-            updatedHabit.currentStreak = 0
+            updatedHabit.currentStreak = 1
         }
         
         //update best streak
@@ -58,6 +60,8 @@ struct PersistenceLayer {
             
         self.habits[habitIndex] = updatedHabit
         self.saveHabits()
+        
+        return updatedHabit
     }
     
     //delete habit
@@ -67,7 +71,7 @@ struct PersistenceLayer {
     }
     
     //load
-    private mutating func loadHabits() {
+    mutating func refreshHabits() {
         let userDefaults = UserDefaults.standard
         guard
             let habitData = userDefaults.data(forKey: PersistenceLayer.userDefaultsHabitsKeyValue),

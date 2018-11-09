@@ -13,6 +13,9 @@ class HabitDetailedViewController: UIViewController {
     // MARK: - VARS
     
     var habit: Habit!
+    var habitIndex: Int!
+    
+    private var persistance = PersistenceLayer()
     
     // MARK: - RETURN VALUES
     
@@ -22,9 +25,9 @@ class HabitDetailedViewController: UIViewController {
         title = habit.title
         imageViewIcon.image = habit.selectedImage.image
         labelCurrentStreak.text = "\(habit.currentStreak) days"
-        //        labelTotalCompletions.text = String(habit.totalCompletions)
-        //        labelBestStreak.text = ""
-        //        labelStartingDate.text = habit.dateCreated.stringValue
+        labelTotalCompletions.text = String(habit.numberOfCompletions)
+        labelBestStreak.text = String(habit.bestStreak)
+//        labelStartingDate.text = habit.dateCreated.stringValue
     }
     
     // MARK: - IBACTIONS
@@ -36,7 +39,8 @@ class HabitDetailedViewController: UIViewController {
     @IBOutlet weak var labelStartingDate: UILabel!
     @IBOutlet weak var buttonAction: UIButton!
     @IBAction func pressActionButton(_ sender: Any) {
-        
+        habit = persistance.markHabitAsCompleted(habitIndex)
+        updateUI()
     }
     
     // MARK: - LIFE CYCLE
