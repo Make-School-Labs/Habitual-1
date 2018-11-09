@@ -23,6 +23,7 @@ struct PersistenceLayer {
     // MARK: - RETURN VALUES
     
     //add new habit
+    @discardableResult
     mutating func createNewHabit(name: String, image: Habit.Images) -> Habit {
         let newHabit = Habit(title: name, image: image)
         self.habits.insert(newHabit, at: 0)

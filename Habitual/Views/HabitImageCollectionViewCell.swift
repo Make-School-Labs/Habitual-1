@@ -16,16 +16,11 @@ class HabitImageCollectionViewCell: UICollectionViewCell {
         return UINib(nibName: String(describing: self), bundle: nil)
     }
     
-     func setImage(image: UIImage){
-     self.habitImage.image = image
+    func setImage(image: UIImage){
+        self.habitImage.image = image
     }
     
-
-//    let images = Habit.Images.allCases.map{$0.image}
-    
-   
     @IBOutlet weak var habitImage: UIImageView!
     
-    
-
 }
+

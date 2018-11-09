@@ -11,25 +11,27 @@ import UIKit
 class AddHabitViewController: UIViewController{
     
     // MARK: - VARS
-    let habit_images = [UIImage].init(repeating: UIImage(named: "outdoors")!, count: 12)
-    @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var pickPhotoButton: UIButton!
+    
+    let habitImages = Habit.Images.allCases
+    
     // MARK: - RETURN VALUES
     
     // MARK: - METHODS
+    
     private func updateUI() {
         title = "Choose an Image"
     }
     
     // MARK: - IBACTIONS
     
+    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var pickPhotoButton: UIButton!
     
     @IBAction func pickPhotoButtonPressed(_ sender: Any) {
         guard let selectedIndexPath = collectionView.indexPathsForSelectedItems?.first else {return}
         let confirmHabitVC = ConfirmHabitViewController.instantiate()
-        confirmHabitVC.habitImage = habit_images[selectedIndexPath.row]
+        confirmHabitVC.habitImage = habitImages[selectedIndexPath.row]
         navigationController?.pushViewController(confirmHabitVC, animated: true)
-     
     }
     
     // MARK: - LIFE CYCLE
@@ -41,12 +43,12 @@ class AddHabitViewController: UIViewController{
                                 forCellWithReuseIdentifier: HabitImageCollectionViewCell.identifier)
        collectionView.allowsMultipleSelection = false
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         updateUI()
     }
-    
 }
 
 // MARK: - CollectionView Delegate Methods
@@ -59,12 +61,12 @@ extension AddHabitViewController: UICollectionViewDataSource, UICollectionViewDe
             for: indexPath
             ) as! HabitImageCollectionViewCell
 
-        cell.setImage(image: habit_images[indexPath.row])
+        cell.setImage(image: habitImages[indexPath.row].image)
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return habit_images.count
+        return habitImages.count
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -94,8 +96,5 @@ extension AddHabitViewController: UICollectionViewDataSource, UICollectionViewDe
         let cell = collectionView.cellForItem(at: indexPath)
         cell?.layer.borderWidth = 0.0
     }
-    
-    
-    
 }
 

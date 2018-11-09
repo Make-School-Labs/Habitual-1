@@ -11,7 +11,8 @@ import UIKit.UIImage
 
 struct Habit: Codable {
     enum Images: Int, Codable, CaseIterable {
-        case outdoors = 0
+        case outdoors
+        case forest
 
         var image: UIImage {
             guard let image = UIImage(named: String(describing: self)) else {
