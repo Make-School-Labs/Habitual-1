@@ -14,13 +14,13 @@ struct PersistenceLayer {
     
     private(set) var habits: [Habit] = []
     
+    private static let userDefaultsHabitsKeyValue = "HABITS_ARRAY"
+    
     init() {
         self.loadHabits()
     }
     
     // MARK: - RETURN VALUES
-    
-    // MARK: - METHODS
     
     //add new habit
     mutating func createNewHabit(name: String, image: Habit.Images) -> Habit {
@@ -30,6 +30,8 @@ struct PersistenceLayer {
         
         return newHabit
     }
+    
+    // MARK: - METHODS
     
     //mark habit complete
     mutating func markHabitAsCompleted(_ habitIndex: Int) {
@@ -59,14 +61,31 @@ struct PersistenceLayer {
     }
     
     //delete habit
+    mutating func delete(_ habitIndex: Int) {
+        self.habits.remove(at: habitIndex)
+        self.saveHabits()
+    }
     
     //load
-    private func loadHabits() {
+    private mutating func loadHabits() {
+        let userDefaults = UserDefaults.standard
+        guard
+            let habitData = userDefaults.data(forKey: PersistenceLayer.userDefaultsHabitsKeyValue),
+            let habits = try? JSONDecoder().decode([Habit].self, from: habitData) else {
+                return
+        }
         
+        self.habits = habits
     }
     
     //save
     private func saveHabits() {
+        guard let habitsData = try? JSONEncoder().encode(self.habits) else {
+            fatalError("could not encode list of habits")
+        }
         
+        let userDefaults = UserDefaults.standard
+        userDefaults.set(habitsData, forKey: PersistenceLayer.userDefaultsHabitsKeyValue)
+        userDefaults.synchronize()
     }
 }

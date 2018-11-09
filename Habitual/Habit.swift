@@ -9,8 +9,8 @@
 import Foundation
 import UIKit.UIImage
 
-struct Habit {
-    enum Images: Int {
+struct Habit: Codable {
+    enum Images: Int, Codable {
         case outdoors = 0
         
         var image: UIImage {
