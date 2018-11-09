@@ -11,7 +11,7 @@ import UIKit
 class MainViewController: UIViewController {
     
     var habits: [Habit] = [
-        Habit.init(title: "Sleep", currentStreak: 0, dateCreated: Date(), selectedImage: Habit.Images.outdoors)
+        Habit.init(title: "Sleep", image: Habit.Images.outdoors)
     ]
     
     @IBOutlet weak var tableView: UITableView!

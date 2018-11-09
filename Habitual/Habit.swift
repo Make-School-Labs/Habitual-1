@@ -9,21 +9,34 @@
 import Foundation
 import UIKit.UIImage
 
-struct Habit {
-    enum Images: CaseIterable {
-        case outdoors
-        
+struct Habit: Codable {
+    enum Images: Int, Codable, CaseIterable {
+        case outdoors = 0
+
         var image: UIImage {
             guard let image = UIImage(named: String(describing: self)) else {
                 fatalError("image \(self) not found")
             }
-            
+
             return image
         }
     }
-    
+
     var title: String
-    var currentStreak: Int = 0
-    var dateCreated: Date = Date()
+    let dateCreated: Date = Date()
     var selectedImage: Images
+
+    var currentStreak: Int = 0
+    var bestStreak: Int = 0
+    var lastCompletionDate: Date?
+    var numberOfCompletions: Int = 0
+
+    var hasCompletedForToday: Bool {
+        return lastCompletionDate?.isToday ?? false
+    }
+
+    init(title: String, image: Images) {
+        self.title = title
+        self.selectedImage = image
+    }
 }
