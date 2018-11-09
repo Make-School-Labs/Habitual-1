@@ -23,6 +23,7 @@ struct Habit: Codable {
         }
     }
 
+    // Initalizing out here beacuse they are static values
     var title: String
     let dateCreated: Date = Date()
     var selectedImage: Images
