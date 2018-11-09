@@ -12,7 +12,7 @@ class HabitTableViewCell: UITableViewCell {
     
     static let identifier = "habit cell"
     
-    static var nib: UINib {
+    static var nib: UINib { // Making a nib out of this file with the same name
         return UINib(nibName: String(describing: self), bundle: nil)
     }
    
@@ -22,12 +22,13 @@ class HabitTableViewCell: UITableViewCell {
     
     // MARK: - METHODS
     
+    
     func configure(_ habit: Habit) {
         self.imageViewIcon.image = habit.selectedImage.image
         self.labelHabitTitle.text = habit.title
         self.labelStreaks.text = "streak: \(habit.currentStreak)"
         
-        if habit.hasCompletedForToday {
+        if habit.hasCompletedForToday { // Icons on the right side of the cell
             self.accessoryType = .checkmark
         } else {
             self.accessoryType = .disclosureIndicator
