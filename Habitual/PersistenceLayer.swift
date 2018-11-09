@@ -70,6 +70,13 @@ struct PersistenceLayer {
         self.saveHabits()
     }
     
+    mutating func swapHabits(habitIndex: Int, destinationIndex: Int) {
+        let habitToSwap = self.habits[habitIndex]
+        self.habits.remove(at: habitIndex)
+        self.habits.insert(habitToSwap, at: destinationIndex)
+        self.saveHabits()
+    }
+    
     mutating func setNeedsToReloadHabits() {
         self.loadHabits()
     }
