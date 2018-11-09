@@ -10,9 +10,7 @@ import UIKit
 
 class MainViewController: UIViewController {
     
-    var habits: [Habit] = [
-        Habit.init(title: "Sleep", image: Habit.Images.outdoors)
-    ]
+    private var persistance = PersistenceLayer()
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -28,6 +26,12 @@ class MainViewController: UIViewController {
         )
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        persistance.refreshHabits()
+        tableView.reloadData()
+    }
 }
 
 // MARK: - Navigation Bar Code
@@ -43,6 +47,10 @@ extension MainViewController {
     }
     
     @objc func addHabit(_ sender: UIBarButtonItem) {
+        _ = persistance.createNewHabit(name: "LOL", image: .outdoors)
+        tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
+        
+        return ()
         let addHabitVc = AddHabitViewController.instantiate()
         navigationController?.pushViewController(addHabitVc, animated: true)
     }
@@ -57,7 +65,7 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return habits.count
+        return persistance.habits.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -70,7 +78,7 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
             for: indexPath
             ) as! HabitTableViewCell
         
-        let habit = habits[indexPath.row]
+        let habit = persistance.habits[indexPath.row]
         cell.configure(habit)
         
         return cell
@@ -78,9 +86,10 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let selectedHabit = habits[indexPath.row]
+        let selectedHabit = persistance.habits[indexPath.row]
         let habitDetailedVc = HabitDetailedViewController.instantiate()
         habitDetailedVc.habit = selectedHabit
+        habitDetailedVc.habitIndex = indexPath.row
         navigationController?.pushViewController(habitDetailedVc, animated: true)
     }
 }
