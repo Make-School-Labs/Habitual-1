@@ -12,7 +12,7 @@ struct PersistenceLayer {
     
     // MARK: - VARS
     
-     var habits: [Habit] = []
+    private(set) var habits: [Habit] = []
     
     private static let userDefaultsHabitsKeyValue = "HABITS_ARRAY"
     

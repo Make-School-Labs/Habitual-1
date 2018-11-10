@@ -14,8 +14,6 @@ class HabitsTableViewController: UITableViewController {
     
     private var persistance = PersistenceLayer()
     
-    var habits = [Habit]()
-    
     // MARK: - RETURN VALUES
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -80,26 +78,6 @@ class HabitsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let day = 60*60*24
-        
-        var aHabit = Habit(title: "Buttttt", image: .forest)
-        aHabit.lastCompletionDate = Date(timeIntervalSinceNow: TimeInterval(-day*2))
-        aHabit.currentStreak = 100
-        
-        var bHabit = Habit(title: "lololol", image: .forest)
-        bHabit.lastCompletionDate = Date(timeIntervalSinceNow: TimeInterval(-day))
-        bHabit.currentStreak = 100
-        
-        var cHabit = Habit(title: "hahaha", image: .forest)
-        cHabit.lastCompletionDate = Date(timeIntervalSinceNow: 0)
-        cHabit.currentStreak = 100
-        
-        persistance.habits = [
-            aHabit,
-            bHabit,
-            cHabit
-        ]
         
         persistance.updateHabitStreaks()
         

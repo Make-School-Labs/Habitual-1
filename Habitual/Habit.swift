@@ -11,8 +11,22 @@ import UIKit.UIImage
 
 struct Habit: Codable {
     enum Images: Int, Codable, CaseIterable {
-        case outdoors
-        case forest
+        case book
+        case bulb
+        case clock
+        case code
+        case drop
+        case food
+        case grow
+        case gym
+        case heart
+        case lotus
+        case other
+        case pet
+        case pill
+        case search
+        case sleep
+        case tooth
 
         var image: UIImage {
             guard let image = UIImage(named: String(describing: self)) else {
