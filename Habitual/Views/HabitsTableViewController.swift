@@ -1,5 +1,5 @@
 //
-//  MainViewController.swift
+//  HabitsTableViewController.swift
 //  Habitual
 //
 //  Created by Sam Galizia on 8/21/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainViewController: UITableViewController {
+class HabitsTableViewController: UITableViewController {
     
     // MARK: - VARS
     
@@ -121,7 +121,7 @@ class MainViewController: UITableViewController {
 
 // MARK: - Navigation Bar Code
 
-extension MainViewController {
+extension HabitsTableViewController {
     
     func setupNavBar() {
         title = "Habitual"

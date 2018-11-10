@@ -10,7 +10,7 @@
 		2226101A212B768000EA4FAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22261019212B768000EA4FAC /* AppDelegate.swift */; };
 		22261021212B768200EA4FAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22261020212B768200EA4FAC /* Assets.xcassets */; };
 		22261024212B768200EA4FAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22261022212B768200EA4FAC /* LaunchScreen.storyboard */; };
-		2226102D212C80B100EA4FAC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2226102B212C80B100EA4FAC /* MainViewController.swift */; };
+		2226102D212C80B100EA4FAC /* HabitsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2226102B212C80B100EA4FAC /* HabitsTableViewController.swift */; };
 		2226102E212C80B100EA4FAC /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2226102C212C80B100EA4FAC /* MainViewController.xib */; };
 		22261031212C849600EA4FAC /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22261030212C849600EA4FAC /* UIViewControllerExtensions.swift */; };
 		22261034212DEDC400EA4FAC /* AddHabitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22261032212DEDC400EA4FAC /* AddHabitViewController.swift */; };
@@ -35,7 +35,7 @@
 		22261020212B768200EA4FAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		22261023212B768200EA4FAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		22261025212B768200EA4FAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2226102B212C80B100EA4FAC /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		2226102B212C80B100EA4FAC /* HabitsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsTableViewController.swift; sourceTree = "<group>"; };
 		2226102C212C80B100EA4FAC /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		22261030212C849600EA4FAC /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		22261032212DEDC400EA4FAC /* AddHabitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHabitViewController.swift; sourceTree = "<group>"; };
@@ -101,7 +101,7 @@
 		2226102F212C80C300EA4FAC /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				2226102B212C80B100EA4FAC /* MainViewController.swift */,
+				2226102B212C80B100EA4FAC /* HabitsTableViewController.swift */,
 				2226102C212C80B100EA4FAC /* MainViewController.xib */,
 				22261032212DEDC400EA4FAC /* AddHabitViewController.swift */,
 				22261033212DEDC400EA4FAC /* AddHabitViewController.xib */,
@@ -195,7 +195,7 @@
 			files = (
 				E941CD0F218B89AD0032C386 /* Habit.swift in Sources */,
 				E9F4A95F21960E200029257D /* AlertViewControllerExtensions.swift in Sources */,
-				2226102D212C80B100EA4FAC /* MainViewController.swift in Sources */,
+				2226102D212C80B100EA4FAC /* HabitsTableViewController.swift in Sources */,
 				7A119A902194F7B200AD82B4 /* ConfirmHabitViewController.swift in Sources */,
 				E941CD12218B91A70032C386 /* HabitDetailedViewController.swift in Sources */,
 				7A119A8C2194D2BA00AD82B4 /* HabitImageCollectionViewCell.swift in Sources */,
