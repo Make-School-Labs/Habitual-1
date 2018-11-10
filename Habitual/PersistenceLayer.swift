@@ -12,7 +12,7 @@ struct PersistenceLayer {
     
     // MARK: - VARS
     
-    private(set) var habits: [Habit] = []
+     var habits: [Habit] = []
     
     private static let userDefaultsHabitsKeyValue = "HABITS_ARRAY"
     
@@ -63,6 +63,18 @@ struct PersistenceLayer {
         self.saveHabits()
         
         return updatedHabit
+    }
+    
+    mutating func updateHabitStreaks() {
+        for (index, aHabit) in self.habits.enumerated() {
+            guard aHabit.currentStreak != 0 else { continue }
+            
+            if let lastCompletedDate = aHabit.lastCompletionDate, lastCompletedDate.isYesterday == false && lastCompletedDate.isToday == false {
+                self.habits[index].currentStreak = 0
+            }
+        }
+        
+        self.saveHabits()
     }
     
     //delete habit
